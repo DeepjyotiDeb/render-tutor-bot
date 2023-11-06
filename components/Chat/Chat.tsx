@@ -1176,56 +1176,14 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
     <div
       className={`relative flex flex-col h-screen overflow-hidden bg-white dark:bg-[#343541] `}
     >
-      {/* <div className="absolute z-10 flex justify-center gap-10">
-        <Image
-          alt="background1"
-          src={`${process.env.NEXT_PUBLIC_AWS_IMAGE}/background+1.png`}
-          unoptimized
-          // style={{ objectFit: 'cover' }}
-          width={100}
-          height={100}
-          className="min-h-[25vh] w-[50vw]"
-        />
-        <Image
-          alt="background2"
-          src={`${process.env.NEXT_PUBLIC_AWS_IMAGE}/background+2.png`}
-          unoptimized
-          // style={{ objectFit: 'cover' }}
-          width={100}
-          height={100}
-          className="min-h-[25vh] w-[50vw]"
-        />
-      </div> */}
       <div
         className="absolute z-10 flex h-full w-screen bg-repeat bg-contain"
         style={{
           backgroundImage: `url(${process.env.NEXT_PUBLIC_AWS_IMAGE}/Group+117.png)`,
         }}
-      >
-        {/* <Image
-          alt="background1"
-          src={`${process.env.NEXT_PUBLIC_AWS_IMAGE}/background+1.png`}
-          unoptimized
-          width={100}
-          height={100}
-          className="h-full w-auto"
-        />
-        <Image
-          alt="background2"
-          src={`${process.env.NEXT_PUBLIC_AWS_IMAGE}/background+2.png`}
-          unoptimized
-          width={100}
-          height={100}
-          // style={{ transform: 'scaleX(-1)' }}
-          className="h-full w-auto"
-        /> */}
-      </div>
+      ></div>
 
       <div className="h-[8vh] top-0 z-10  flex justify-between border border-b-slate-400 p-2 dark:border-none bg-white dark:bg-[#444654] ">
-        {/* <div className="flex items-center gap-2 ml-3">
-          <Image alt="robot" src={RobotImage} className="h-10 w-10" />
-          <div className="text-lg font-medium text-black">Savvy Max</div>
-        </div> */}
         <div className="flex items-center gap-0">
           <IconChevronLeft
             className="row-span-2 place-self-center 2xl:scale-150 mx-3"
@@ -1237,31 +1195,8 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               1-1: Practice Buddy: Independent Practice; Problem Solving
             </p>
           </div>
-          {/* <div className="flex flex-col row-span-2">
-            <p className="font-light text-neutral-500">
-              MRS. SMITH&apos;S ELEMENTARY CLASS
-            </p>
-            <p className="">
-              1-1: Practice Buddy: Independent Practice; Problem Solving
-            </p>
-          </div> */}
         </div>
 
-        {/* {t('Model')}: {selectedConversation?.model.name} | {t('Temp')}
-                  : {selectedConversation?.temperature} | */}
-        {/* <button
-          className="ml-2 cursor-pointer hover:opacity-50 hidden md:block"
-          onClick={handleSettings}
-        >
-          <IconSettings size={18} />
-        </button> */}
-
-        {/* <button
-          className="text-[#006BE0] bg-white border border-[#006BE0] focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-md text-sm px-2.5 py-1.5 mr-2 "
-          onClick={onClearAll}
-        >
-          Clear
-        </button> */}
         <div className="flex gap-2 items-center mr-4 text-black 2xl:gap-4">
           <div className="w-0.5 bg-slate-400 opacity-100 min-h-[2em]" />
           <div className="flex flex-col leading-5 ">
@@ -1298,44 +1233,16 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           />
         </div>
       </div>
+      <button
+        className="z-50"
+        onClick={() => {
+          console.log('log', { apiKey, serverSideApiKeyIsSet, modelError });
+        }}
+      >
+        Test
+      </button>
+
       {!(apiKey || serverSideApiKeyIsSet) ? (
-        // <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
-        //   <div className="text-center text-4xl font-bold text-black dark:text-white">
-        //     Welcome to Chatbot UI
-        //   </div>
-        //   <div className="text-center text-lg text-black dark:text-white">
-        //     <div className="mb-8">{`Chatbot UI is an open source clone of OpenAI's ChatGPT UI.`}</div>
-        //     <div className="mb-2 font-bold">
-        //       Important: Chatbot UI is 100% unaffiliated with OpenAI.
-        //     </div>
-        //   </div>
-        //   <div className="text-center text-gray-500 dark:text-gray-400">
-        //     <div className="mb-2">
-        //       Chatbot UI allows you to plug in your API key to use this UI with
-        //       their API.
-        //     </div>
-        //     <div className="mb-2">
-        //       It is <span className="italic">only</span> used to communicate
-        //       with their API.
-        //     </div>
-        //     <div className="mb-2">
-        //       {t(
-        //         'Please set your OpenAI API key in the bottom left of the sidebar.',
-        //       )}
-        //     </div>
-        //     <div>
-        //       {t("If you don't have an OpenAI API key, you can get one here: ")}
-        //       <a
-        //         href="https://platform.openai.com/account/api-keys"
-        //         target="_blank"
-        //         rel="noreferrer"
-        //         className="text-blue-500 hover:underline"
-        //       >
-        //         openai.com
-        //       </a>
-        //     </div>
-        //   </div>
-        // </div>
         <></>
       ) : modelError ? (
         <ErrorMessageDiv error={modelError} />
@@ -1359,15 +1266,6 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     ) : (
                       <div>
                         <div className="grid grid-rows-3 grid-flow-col items-center">
-                          {/* <Image
-                            alt="robot"
-                            src={RobotImage}
-                            className="row-span-3"
-                          /> */}
-                          {/* <div className="col-span-2 row-span-2">
-                            Welcome! I&apos;m Savvy, I&apos;ll help you learn
-                            math in a fun way!
-                          </div> */}
                           <div className="text-lg font-normal col-span-2 mt-0 row-span-3 md:-mt-12">
                             Hi! I&apos;m Savvy Max, here to help you with math!
                           </div>
@@ -1375,33 +1273,6 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                       </div>
                     )}
                   </div>
-
-                  {/* {models.length > 0 && (
-                    <div className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
-                      <ModelSelect />
-
-                      <SystemPrompt
-                        conversation={selectedConversation}
-                        prompts={prompts}
-                        onChangePrompt={(prompt) =>
-                          handleUpdateConversation(selectedConversation, {
-                            key: 'prompt',
-                            value: prompt,
-                          })
-                        }
-                      />
-
-                      <TemperatureSlider
-                        label={t('Temperature')}
-                        onChangeTemperature={(temperature) =>
-                          handleUpdateConversation(selectedConversation, {
-                            key: 'temperature',
-                            value: temperature,
-                          })
-                        }
-                      />
-                    </div>
-                  )} */}
                 </div>
               </>
             ) : (
@@ -1476,31 +1347,6 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                               />
                             ),
                           )}
-                        {/* {expand === 'storySection' && (
-                          <div className="flex flex-col gap-3 justify-start items-start p-4 px-6 text-white">
-                            <p className="mb-2 text-base">
-                              Choose any one of the following adventures!
-                            </p>
-                            <button
-                              className="rounded border-white border-2 bg-blue-600 px-3 text-white py-1 hover:opacity-80"
-                              // onClick={handleSwitchQuestion}
-                            >
-                              Mario
-                            </button>
-                            <button
-                              className="rounded border-white border-2 bg-blue-600 px-3 text-white py-1 hover:opacity-80"
-                              // onClick={handleSwitchQuestion}
-                            >
-                              Robots
-                            </button>
-                            <button
-                              className="rounded border-white border-2 bg-blue-600 px-3 text-white py-1 hover:opacity-80"
-                              // onClick={handleSwitchQuestion}
-                            >
-                              Barbie
-                            </button>
-                          </div>
-                        )} */}
 
                         {loading && <ChatLoader />}
 
@@ -1534,40 +1380,14 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           />
         </>
       )}
-      {/* <Image
-        alt="tiger"
-        src={cloudImage}
-        unoptimized
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          width: '100vw',
-        }}
-      /> */}
 
       {!(questionNumber >= questionArray.length) && (
         <QuestionCards {...{ handleQuestionActions, expand }} />
       )}
       {/* bottom bar */}
       <div className="w-full h-[8vh] z-20 flex  justify-between border border-b-slate-400  py-2 text-neutral-500 dark:border-none bg-white dark:bg-[#444654] dark:text-neutral-200">
-        <div className="flex items-center gap-2 ml-3">
-          {/* <button
-            className="text-white bg-[#006BE0] border border-[#006BE0] focus:outline-none hover:bg-gray-100 hover:text-[#006BE0] disabled:bg-neutral-300 disabled:text-slate-500 disabled:border-gray-200 focus:ring-4 focus:ring-gray-200 font-medium rounded-md text-sm pl-1 pr-2 py-1.5 flex items-center mr-2"
-            // onClick={onClearAll}
-            onClick={handleSwitchQuestion}
-          >
-            Switch Question
-          </button> */}
-          {/* <div className="text-lg font-medium text-black">Bottom Bar</div> */}
-        </div>
-        {/* {t('Model')}: {selectedConversation?.model.name} | {t('Temp')}
-                  : {selectedConversation?.temperature} | */}
-        {/* <button
-          className="ml-2 cursor-pointer hover:opacity-50 hidden md:block"
-          onClick={handleSettings}
-        >
-          <IconSettings size={18} />
-        </button> */}
+        <div className="flex items-center gap-2 ml-3"></div>
+
         <div className="flex items-center gap-2 mr-4">
           {questionNumber <= 8 && <p>Question {questionNumber + 1} of 9</p>}
           {
