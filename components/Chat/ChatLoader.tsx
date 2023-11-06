@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
-import RobotImage from '../../public/images/SavvyMax.png';
+// import RobotImage from '../../public/images/SavvyMax.png';
 
 interface Props {}
 

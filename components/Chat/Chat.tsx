@@ -41,7 +41,7 @@ import { Plugin } from '@/types/plugin';
 import HomeContext from '@/pages/api/home/home.context';
 
 // import cloudImage from '../../public/images/Graphics.png';
-import RobotImage from '../../public/images/SavvyMax.png';
+// import RobotImage from '../../public/images/SavvyMax.png';
 import { QuestionCards } from '../Questions/QuestionCard/QuestionCards';
 import { QuestionList, QuestionListRef } from '../Questions/QuestionList';
 import { ScoreCard } from '../Score/ScoreCard';
@@ -241,7 +241,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   //           const { value, done: doneReading } = await reader.read();
   //           done = doneReading;
   //           const chunkValue = decoder.decode(value);
-  //           // // console.log('chunk value', chunkValue);
+  // // console.log('chunk value', chunkValue);
   //           text += chunkValue;
   //           if (isFirst) {
   //             isFirst = false;
@@ -1359,11 +1359,11 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     ) : (
                       <div>
                         <div className="grid grid-rows-3 grid-flow-col items-center">
-                          <Image
+                          {/* <Image
                             alt="robot"
                             src={RobotImage}
                             className="row-span-3"
-                          />
+                          /> */}
                           {/* <div className="col-span-2 row-span-2">
                             Welcome! I&apos;m Savvy, I&apos;ll help you learn
                             math in a fun way!

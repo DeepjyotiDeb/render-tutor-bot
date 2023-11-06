@@ -16,7 +16,7 @@ import HomeContext from '@/pages/api/home/home.context';
 
 import { SettingDialog } from '@/components/Settings/SettingDialog';
 
-import UserImage from '../../../public/images/user.png';
+// import UserImage from '../../../public/images/user.png';
 import { Import } from '../../Settings/Import';
 import { Key } from '../../Settings/Key';
 import { SidebarButton } from '../../Sidebar/SidebarButton';
@@ -50,7 +50,7 @@ export const ChatbarSettings = () => {
     <div className="flex flex-col items-center space-y-1 border-t border-white/20 pt-1 text-sm">
       <div className="flex justify-center items-center align-middle hover:text-neutral-100  w-full   py-5 bg-[#e7f3ff] rounded-lg">
         {/* <IconUserCircle size={40} color="black" /> */}
-        <Image alt="user" src={UserImage} width={45} />
+        {/* <Image alt="user" src={UserImage} width={45} /> */}
         <button className="text-black ml-2">Amy</button>
         <IconCaretDown color="black" />
       </div>
