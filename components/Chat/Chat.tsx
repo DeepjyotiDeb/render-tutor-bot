@@ -1233,14 +1233,14 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
           />
         </div>
       </div>
-      <button
+      {/* <button
         className="z-50"
         onClick={() => {
           console.log('log', { apiKey, serverSideApiKeyIsSet, modelError });
         }}
       >
         Test
-      </button>
+      </button> */}
 
       {!(apiKey || serverSideApiKeyIsSet) ? (
         <></>
