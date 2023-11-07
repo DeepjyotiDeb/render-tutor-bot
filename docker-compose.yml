@@ -3,7 +3,14 @@ version: '3.6'
 services:
   chatgpt:
     build: .
+    env_file: .env
     ports:
       - 3000:3000
     environment:
       - 'OPENAI_API_KEY='
+      - 'PALM_API_KEY='
+      - 'NEXT_PUBLIC_DEFAULT_TEMPERATURE='
+      - 'DEFAULT_MODEL='
+      - 'NEXT_PUBLIC_STAGE='
+      - 'MONGO_DB_URI='
+      - 'NEXT_PUBLIC_AWS_IMAGE='
