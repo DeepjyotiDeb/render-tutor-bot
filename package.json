@@ -2,6 +2,7 @@
   "name": "ai-chatbot-starter",
   "version": "0.1.0",
   "private": true,
+  "main": "function.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +10,8 @@
     "lint": "next lint",
     "format": "prettier --write .",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "deploy": "yarn build && cross-env NODE_ENV=production firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "@aws-sdk/client-firehose": "^3.395.0",
@@ -18,8 +20,11 @@
     "@tabler/icons-react": "^2.9.0",
     "@typegoose/typegoose": "^11.4.1",
     "aws-sdk": "^2.1440.0",
+    "cross-env": "^7.0.3",
     "dynamoose": "^3.2.0",
     "eventsource-parser": "^0.1.0",
+    "firebase-admin": "^11.11.0",
+    "firebase-functions": "^4.5.0",
     "google-auth-library": "^9.0.0",
     "i18next": "^22.4.13",
     "mongoose": "^7.4.3",
