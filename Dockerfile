@@ -11,7 +11,6 @@ RUN npm ci
 FROM dependencies AS build
 COPY . .
 RUN npm run build
-RUN npm install -g next
 
 # ---- Production ----
 FROM node:19-alpine AS production
@@ -27,4 +26,4 @@ COPY --from=build /app/next-i18next.config.js ./next-i18next.config.js
 EXPOSE 3000
 
 # Start the application
-CMD ["next", "start", "-p", "3000"]
+CMD ["npm", "start"]
